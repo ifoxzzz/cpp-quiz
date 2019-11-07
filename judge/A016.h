@@ -45,16 +45,16 @@ namespace foxzzz {
 			loadExamples(ID);
 		}
 
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			for (int i = 10; i >= 0; --i) {
-				std::cout << "火箭将在" << i << "秒后发射" << std::endl;
-			}
-			std::cout << "发射！";
-		}
+		//static void verifyCode() {
+		//	for (int i = 10; i >= 0; --i) {
+		//		std::cout << "火箭将在" << i << "秒后发射" << std::endl;
+		//	}
+		//	std::cout << "发射！";
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)

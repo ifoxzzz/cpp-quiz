@@ -40,20 +40,20 @@ namespace foxzzz {
 			loadExamples(ID);
 		}
 
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			int n;
-			std::cin >> n;
-			for (int i = 0; i < n; ++i) {
-				int number;
-				std::cin >> number;
-				std::cout << number << " ";
-				if (number == -1) break;
-			}
-		}
+		//static void verifyCode() {
+		//	int n;
+		//	std::cin >> n;
+		//	for (int i = 0; i < n; ++i) {
+		//		int number;
+		//		std::cin >> number;
+		//		std::cout << number << " ";
+		//		if (number == -1) break;
+		//	}
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)

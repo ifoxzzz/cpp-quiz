@@ -41,17 +41,17 @@ namespace foxzzz {
 			loadExamples(ID);
 		}
 
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			int m, n, t;
-			std::cin >> m >> n >> t;
-			for (int i = m; i <= n; i += t) {
-				std::cout << i << " ";
-			}
-		}
+		//static void verifyCode() {
+		//	int m, n, t;
+		//	std::cin >> m >> n >> t;
+		//	for (int i = m; i <= n; i += t) {
+		//		std::cout << i << " ";
+		//	}
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)

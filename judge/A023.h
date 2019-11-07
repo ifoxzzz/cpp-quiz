@@ -43,20 +43,20 @@ namespace foxzzz {
 			loadExamples(ID);
 		}
 
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			int m, n, t;
-			scanf("%d%d%d", &m, &n, &t);
-			for (int i = m; i <= n; ++i) {
-				printf("%-3d", i);
-				if ((i - m) % t == (t - 1)) {
-					printf("\n");
-				}
-			}
-		}
+		//static void verifyCode() {
+		//	int m, n, t;
+		//	scanf("%d%d%d", &m, &n, &t);
+		//	for (int i = m; i <= n; ++i) {
+		//		printf("%-3d", i);
+		//		if ((i - m) % t == (t - 1)) {
+		//			printf("\n");
+		//		}
+		//	}
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)
