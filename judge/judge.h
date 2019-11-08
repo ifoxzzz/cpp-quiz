@@ -192,9 +192,9 @@ namespace foxzzz {
 		}
 
 		void run() {
-			build();
 			showTitleBar();
 			showSummary();
+			build();
 			if (!examples_.empty()) {
 				execute();
 				showInfo();
@@ -219,46 +219,14 @@ namespace foxzzz {
 			examples_.push_back(example);
 		}
 
-		void loadExamples(const std::string& directory) {
-			std::vector<std::string> examples;
-			if (loadExamplesList(directory, examples)) {
-				for (std::size_t index = 0; index < examples.size(); ++index) {
-					const std::string& name = examples[index];
-					Example example;
-					loadExampleFile(directory, name, example);
-					addExample(example);
-				}
-			}
-		}
-
-		static bool loadExamplesList(const std::string& directory, std::vector<std::string>& list) {
-			std::string filename = getCurrentDirectory() + "\\" + directory + "\\" + "examples.txt";
-			std::ifstream ifs(filename.c_str());
-			if (ifs.is_open()) {
-				std::string line;
-				while (ifs >> line) {
-					list.push_back(line);
-				}
+		bool loadExamples() {
+			if (!id_.empty()) {
+				std::vector<Example> examples;
+				loadExamplesDirectory(id_, examples);
+				examples_.swap(examples);
 				return true;
 			}
 			return false;
-		}
-
-		static void loadExampleFile(const std::string& directory, const std::string& name, Example& example) {
-			std::string inputname = getCurrentDirectory() + "\\" + directory + "\\" + name + "_input.txt";
-			std::ifstream input(inputname.c_str());
-			if (input.is_open()) {
-				std::stringstream buffer;
-				buffer << input.rdbuf();
-				example.input = buffer.str();
-			}
-			std::string expectname = getCurrentDirectory() + "\\" + directory + "\\" + name + "_expect.txt";
-			std::ifstream expect(expectname.c_str());
-			if (expect.is_open()) {
-				std::stringstream buffer;
-				buffer << expect.rdbuf();
-				example.expect = buffer.str();
-			}
 		}
 
 	protected:
@@ -305,9 +273,7 @@ namespace foxzzz {
 	private:
 		virtual bool compare(const std::string& expect, const std::string& output) = 0;
 		virtual void build() = 0;
-		virtual ProcedureCall verify() {
-			return NULL;
-		};
+		virtual ProcedureCall verify() { return NULL; };
 
 	private:
 		void execute() {
@@ -480,6 +446,49 @@ namespace foxzzz {
 		}
 
 	private:
+		static void loadExamplesDirectory(const std::string& directory, std::vector<Example>& output) {
+			std::vector<std::string> examples;
+			if (loadExamplesFileList(directory, examples)) {
+				for (std::size_t index = 0; index < examples.size(); ++index) {
+					const std::string& name = examples[index];
+					Example example;
+					loadExampleFile(directory, name, example);
+					output.push_back(example);
+				}
+			}
+		}
+
+		static bool loadExamplesFileList(const std::string& directory, std::vector<std::string>& list) {
+			std::string filename = getCurrentDirectory() + "\\" + directory + "\\" + "examples.txt";
+			std::ifstream ifs(filename.c_str());
+			if (ifs.is_open()) {
+				std::string line;
+				while (ifs >> line) {
+					list.push_back(line);
+				}
+				return true;
+			}
+			return false;
+		}
+
+		static void loadExampleFile(const std::string& directory, const std::string& name, Example& example) {
+			std::string inputname = getCurrentDirectory() + "\\" + directory + "\\" + name + "_input.txt";
+			std::ifstream input(inputname.c_str());
+			if (input.is_open()) {
+				std::stringstream buffer;
+				buffer << input.rdbuf();
+				example.input = buffer.str();
+			}
+			std::string expectname = getCurrentDirectory() + "\\" + directory + "\\" + name + "_expect.txt";
+			std::ifstream expect(expectname.c_str());
+			if (expect.is_open()) {
+				std::stringstream buffer;
+				buffer << expect.rdbuf();
+				example.expect = buffer.str();
+			}
+		}
+
+	private:
 		void showTotalScore() const {
 			printf("\n\n%14s", " ");
 			printColorText(FOREGROUND_RED | FOREGROUND_INTENSITY, "『 按任意键查看总成绩 』");
@@ -605,7 +614,18 @@ namespace foxzzz {
 	};
 
 	class LooseJudge : public Judge {
+	public:
+		LooseJudge(const std::string& id, const std::string& title, const std::string& summary = "") {
+			setID(id);
+			setTitle(title);
+			setSummary(summary);
+		}
+
 	private:
+		virtual void build() {
+			loadExamples();
+		}
+
 		virtual bool compare(const std::string& expect, const std::string& output) {
 			std::vector<std::string> ev;
 			std::vector<std::string> ov;
@@ -618,7 +638,18 @@ namespace foxzzz {
 	};
 
 	class StrictJudge : public Judge {
+	public:
+		StrictJudge(const std::string& id, const std::string& title, const std::string& summary = "") {
+			setID(id);
+			setTitle(title);
+			setSummary(summary);
+		}
+
 	private:
+		virtual void build() {
+			loadExamples();
+		}
+
 		virtual bool compare(const std::string& expect, const std::string& output) {
 			std::vector<std::string> ev;
 			std::vector<std::string> ov;

@@ -30,13 +30,10 @@
 namespace foxzzz {
 
 	class TheJudge : public LooseJudge {
-	private:
-		virtual void build() {
-			setTitle("不能被4整除的数列");
-			setID(ID);
-			loadExamples(ID);
-		}
+	public:
+		TheJudge() : LooseJudge(ID, "不能被4整除的数列") {}
 
+	private:
 		//virtual ProcedureCall verify() {
 		//	return verifyCode;
 		//}

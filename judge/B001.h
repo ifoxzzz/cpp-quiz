@@ -32,13 +32,10 @@
 namespace foxzzz {
 
 	class TheJudge : public LooseJudge {
-	private:
-		virtual void build() {
-			setTitle("N个整数中的最大数");
-			setID(ID);
-			loadExamples(ID);
-		}
+	public:
+		TheJudge() : LooseJudge(ID, "N个整数中的最大数") {}
 
+	private:
 		//virtual ProcedureCall verify() {
 		//	return verifyCode;
 		//}

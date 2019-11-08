@@ -44,13 +44,10 @@
 namespace foxzzz {
 
 	class TheJudge : public StrictJudge {
-	private:
-		virtual void build() {
-			setTitle("ÅÌĞı¾ØÕó");
-			setID(ID);
-			loadExamples(ID);
-		}
+	public:
+		TheJudge() : StrictJudge(ID, "ÅÌĞı¾ØÕó") {}
 
+	private:
 		//virtual ProcedureCall verify() {
 		//	return verifyCode;
 		//}

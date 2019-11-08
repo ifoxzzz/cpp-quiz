@@ -35,13 +35,10 @@
 namespace foxzzz {
 
 	class TheJudge : public StrictJudge {
-	private:
-		virtual void build() {
-			setTitle("每行5个的数列");
-			setID(ID);
-			loadExamples(ID);
-		}
+	public:
+		TheJudge() : StrictJudge(ID, "每行5个的数列") {}
 
+	private:
 		//virtual ProcedureCall verify() {
 		//	return verifyCode;
 		//}

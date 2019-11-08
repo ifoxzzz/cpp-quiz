@@ -37,13 +37,10 @@
 namespace foxzzz {
 
 	class TheJudge : public LooseJudge {
-	private:
-		virtual void build() {
-			setTitle("输出十遍“你好，世界！”");
-			setID(ID);
-			loadExamples(ID);
-		}
+	public:
+		TheJudge() : LooseJudge(ID, "输出十遍“你好，世界！”") {}
 
+	private:
 		//virtual ProcedureCall verify() {
 		//	return verifyCode;
 		//}

@@ -13,8 +13,8 @@
   你好，世界！
 */
 
-#ifndef __A013__
-#define __A013__
+#ifndef __A011__
+#define __A011__
 
 #ifdef JUDGE_MODE
 #include "./judge.h"
@@ -24,13 +24,10 @@
 namespace foxzzz {
 
 	class TheJudge : public LooseJudge {
-	private:
-		virtual void build() {
-			setTitle("输出“你好，世界！”");
-			setID(ID);
-			loadExamples(ID);
-		}
+	public:
+		TheJudge() : LooseJudge(ID, "输出“你好，世界！”") {}
 
+	private:
 		//virtual ProcedureCall verify() {
 		//	return verifyCode;
 		//}
