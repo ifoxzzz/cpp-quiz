@@ -12,6 +12,12 @@
 #ifdef JUDGE_MODE
 
 #define _CRT_SECURE_NO_WARNINGS //for visual studio
+
+#ifndef COMMON_LVB_UNDERSCORE
+#define COMMON_LVB_UNDERSCORE 0x8000 //for code::blocks
+#endif
+
+
 #include <Windows.h>
 #include <cstdio>
 #include <cstdlib>
