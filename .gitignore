@@ -1,12 +1,12 @@
 /*.db
 /*.exe
 /test/vc2015/*
-!/test/vc2015/test.vcxproj.user
+!/test/vc2015/test.vcxproj
 !/test/vc2015/test.vcxproj.filters
 !/test/vc2015/test.vcxproj.user
 !/test/vc2015/test.cpp
 /test/vc2019/*
-!/test/vc2019/test.vcxproj.user
+!/test/vc2019/test.vcxproj
 !/test/vc2019/test.vcxproj.filters
 !/test/vc2019/test.vcxproj.user
 !/test/vc2019/test.cpp
