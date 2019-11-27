@@ -35,21 +35,21 @@ namespace foxzzz {
 		TheJudge() : LooseJudge(ID, "输出能同时被2和4整除或能同时被5和7整除的整数序列") {}
 
 	private:
-	//	virtual ProcedureCall verify() {
-	//		return verifyCode;
-	//	}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-	//	static void verifyCode() {
-	//		while (true) {
-	//			int number;
-	//			std::cin >> number;
-	//			if (number == -1) break;
-	//			if ((number % 2 == 0 && number % 4 == 0) || (number % 5 == 0 && number % 7 == 0)) {
-	//				std::cout << number << " ";
-	//			}
-	//		}
-	//	}
-	//};
+		//static void verifyCode() {
+		//	while (true) {
+		//		int number;
+		//		std::cin >> number;
+		//		if (number == -1) break;
+		//		if ((number % 2 == 0 && number % 4 == 0) || (number % 5 == 0 && number % 7 == 0)) {
+		//			std::cout << number << " ";
+		//		}
+		//	}
+		//}
+	};
 
 	LAUNCH_JUDGE(TheJudge)
 }
