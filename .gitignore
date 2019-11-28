@@ -10,3 +10,8 @@
 !/test/vc2019/test.vcxproj.filters
 !/test/vc2019/test.vcxproj.user
 !/test/vc2019/test.cpp
+/tool/update/*
+!/tool/update/main.cpp
+!/tool/update/update.vcxproj
+!/tool/update/update.vcxproj.filters
+!/tool/update/update.vcxproj.user
