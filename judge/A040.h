@@ -38,22 +38,22 @@ namespace foxzzz {
 		TheJudge() : LooseJudge(ID, "输出数列中从第M个数开始的C个数") {}
 
 	private:
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			int count, position, total;
-			int numbers[200] = { 0 };
-			std::cin >> count;
-			for (int index = 0; index < count; ++index) {
-				std::cin >> numbers[index];
-			}
-			std::cin >> position >> total;
-			for (int index = position - 1; index < position + total - 1; ++index) {
-				std::cout << numbers[index] << " ";
-			}
-		}
+		//static void verifyCode() {
+		//	int count, position, total;
+		//	int numbers[200] = { 0 };
+		//	std::cin >> count;
+		//	for (int index = 0; index < count; ++index) {
+		//		std::cin >> numbers[index];
+		//	}
+		//	std::cin >> position >> total;
+		//	for (int index = position - 1; index < position + total - 1; ++index) {
+		//		std::cout << numbers[index] << " ";
+		//	}
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)

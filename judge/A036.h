@@ -36,26 +36,26 @@ namespace foxzzz {
 		TheJudge() : LooseJudge(ID, "计算多个整数的和II") {}
 
 	private:
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			int count = 0;
-			int sum = 0;
-			int numbers[200] = { 0 };
-			while (true) {
-				int n;
-				std::cin >> n;
-				if (n == -1) break;
-				numbers[count++] = n;
-				sum += n;
-			}
-			std::cout << sum << std::endl;
-			for (int index = 0; index < count; ++index) {
-				std::cout << numbers[index] << " ";
-			}
-		}
+		//static void verifyCode() {
+		//	int count = 0;
+		//	int sum = 0;
+		//	int numbers[200] = { 0 };
+		//	while (true) {
+		//		int n;
+		//		std::cin >> n;
+		//		if (n == -1) break;
+		//		numbers[count++] = n;
+		//		sum += n;
+		//	}
+		//	std::cout << sum << std::endl;
+		//	for (int index = 0; index < count; ++index) {
+		//		std::cout << numbers[index] << " ";
+		//	}
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)

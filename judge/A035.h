@@ -34,31 +34,31 @@ namespace foxzzz {
 		TheJudge() : LooseJudge(ID, "计算多个整数的和、最大数，最小数，平均数") {}
 
 	private:
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			int sum = 0;
-			int count = 1;
-			int max, min;
-			std::cin >> max;
-			sum = min = max;
-			while (true) {
-				int number;
-				std::cin >> number;
-				if (number == -1) break;
-				sum += number;
-				++count;
-				if (max < number) {
-					max = number;
-				}
-				if (min > number) {
-					min = number;
-				}
-			}
-			printf("%d %d %d %.2lf", sum, max, min, sum / (double)count);
-		}
+		//static void verifyCode() {
+		//	int sum = 0;
+		//	int count = 1;
+		//	int max, min;
+		//	std::cin >> max;
+		//	sum = min = max;
+		//	while (true) {
+		//		int number;
+		//		std::cin >> number;
+		//		if (number == -1) break;
+		//		sum += number;
+		//		++count;
+		//		if (max < number) {
+		//			max = number;
+		//		}
+		//		if (min > number) {
+		//			min = number;
+		//		}
+		//	}
+		//	printf("%d %d %d %.2lf", sum, max, min, sum / (double)count);
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)

@@ -34,27 +34,27 @@ namespace foxzzz {
 		TheJudge() : LooseJudge(ID, "计算多个整数的平均数") {}
 
 	private:
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			double sum = 0.0;
-			int count = 0;
-			while (true) {
-				int number;
-				std::cin >> number;
-				if (number == -1) break;
-				sum += number;
-				++count;
-			}
-			if (count > 0) {
-				printf("%.3lf", sum / count);
-			}
-			else {
-				printf("0.000");
-			}
-		}
+		//static void verifyCode() {
+		//	double sum = 0.0;
+		//	int count = 0;
+		//	while (true) {
+		//		int number;
+		//		std::cin >> number;
+		//		if (number == -1) break;
+		//		sum += number;
+		//		++count;
+		//	}
+		//	if (count > 0) {
+		//		printf("%.3lf", sum / count);
+		//	}
+		//	else {
+		//		printf("0.000");
+		//	}
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)

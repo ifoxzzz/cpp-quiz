@@ -38,24 +38,24 @@ namespace foxzzz {
 		TheJudge() : LooseJudge(ID, "计算多个整数的和III") {}
 
 	private:
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			int count;
-			int sum = 0;
-			int numbers[200] = { 0 };
-			std::cin >> count;
-			for (int index = 0; index < count; ++index) {
-				std::cin >> numbers[index];
-				sum += numbers[index];
-			}
-			std::cout << sum << std::endl;
-			for (int index = 0; index < count; ++index) {
-				std::cout << numbers[index] << " ";
-			}
-		}
+		//static void verifyCode() {
+		//	int count;
+		//	int sum = 0;
+		//	int numbers[200] = { 0 };
+		//	std::cin >> count;
+		//	for (int index = 0; index < count; ++index) {
+		//		std::cin >> numbers[index];
+		//		sum += numbers[index];
+		//	}
+		//	std::cout << sum << std::endl;
+		//	for (int index = 0; index < count; ++index) {
+		//		std::cout << numbers[index] << " ";
+		//	}
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)

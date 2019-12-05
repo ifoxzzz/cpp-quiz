@@ -34,23 +34,23 @@ namespace foxzzz {
 		TheJudge() : LooseJudge(ID, "计算多个整数的最小值") {}
 
 	private:
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			int min;
-			std::cin >> min;
-			while (true) {
-				int number;
-				std::cin >> number;
-				if (number == -1) break;
-				if (min > number) {
-					min = number;
-				}
-			}
-			std::cout << min;
-		}
+		//static void verifyCode() {
+		//	int min;
+		//	std::cin >> min;
+		//	while (true) {
+		//		int number;
+		//		std::cin >> number;
+		//		if (number == -1) break;
+		//		if (min > number) {
+		//			min = number;
+		//		}
+		//	}
+		//	std::cout << min;
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)
