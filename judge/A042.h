@@ -33,25 +33,25 @@
 
 namespace foxzzz {
 
-	class TheJudge : public LooseJudge {
+	class TheJudge : public StrictJudge {
 	public:
-		TheJudge() : LooseJudge(ID, "打印正方形") {}
+		TheJudge() : StrictJudge(ID, "打印正方形") {}
 
 	private:
-		virtual ProcedureCall verify() {
-			return verifyCode;
-		}
+		//virtual ProcedureCall verify() {
+		//	return verifyCode;
+		//}
 
-		static void verifyCode() {
-			int count;
-			std::cin >> count;
-			for (int i = 0; i < count; ++i) {
-				for (int j = 0; j < count; ++j) {
-					std::cout << "*";
-				}
-				std::cout << std::endl;
-			}
-		}
+		//static void verifyCode() {
+		//	int count;
+		//	std::cin >> count;
+		//	for (int i = 0; i < count; ++i) {
+		//		for (int j = 0; j < count; ++j) {
+		//			std::cout << "*";
+		//		}
+		//		std::cout << std::endl;
+		//	}
+		//}
 	};
 
 	LAUNCH_JUDGE(TheJudge)

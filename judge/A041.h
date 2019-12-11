@@ -34,9 +34,9 @@
 
 namespace foxzzz {
 
-	class TheJudge : public LooseJudge {
+	class TheJudge : public StrictJudge {
 	public:
-		TheJudge() : LooseJudge(ID, "打印矩形") {}
+		TheJudge() : StrictJudge(ID, "打印矩形") {}
 
 	private:
 		//virtual ProcedureCall verify() {
