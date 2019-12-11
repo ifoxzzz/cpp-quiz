@@ -43,8 +43,8 @@ namespace foxzzz {
 		//}
 
 		//static void verifyCode() {
-		//	int clumn, row;
-		//	std::cin >> clumn >> row;
+		//	int clumn;
+		//	std::cin >> clumn;
 		//	for (int i = 0; i < clumn; ++i) {
 		//		for (int j = 0; j < i + 1; ++j) {
 		//			std::cout << "*";
